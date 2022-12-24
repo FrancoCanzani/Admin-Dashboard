@@ -72,7 +72,7 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 1.5em;
     margin: 0.5em;
     text-transform: uppercase;
@@ -89,8 +89,7 @@ table {
 .dashboard-security *, .dashboard-options * {
     display: flex;
     align-items: center;
-    margin-left: 2px;
-    padding: 0.3em;
+    padding: 0.4em;
     color: black;
     font-weight: 500;
 }
@@ -118,7 +117,6 @@ a {
     position: absolute;
     width: 100%;
     height: 1.5px;
-    border-radius: 2px;
     background-color: #000000;
     bottom: 0;
     left: 0;
@@ -201,6 +199,10 @@ h3.username {
     align-items: center;
 }
 
+::placeholder {
+    font-weight: bold;
+}
+
 .searchButton svg {
     transform: scale(2);
     color: black;
@@ -242,11 +244,13 @@ button * {
 
 .content {
     grid-column: 2 / -1;
-    grid-row: 2 / -1;
+    grid-row: 2 / 5;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 75% 25%;
     background: rgb(239,246,255);
-    background: linear-gradient(90deg, rgba(239,246,255,1) 0%, rgba(219,234,254,1) 50%, rgba(191,219,254,1) 100%);}
+    background: linear-gradient(90deg, rgba(239,246,255,1) 0%, rgba(219,234,254,1) 50%, rgba(191,219,254,1) 100%);
+    justify-items:end;
+}
 
 .projects {
     grid-column: 1 / 2;
@@ -263,10 +267,14 @@ button * {
     font-weight: bold;
 }
 
+.right-content {
+    grid-column: 2 / -1;
+    align-self:center;
+}
+
 .item {
     border-radius: 5%;
     background-color: white;
-    min-width: 28vw;
     position: relative;
     padding: 1em;
     margin: 1em;
@@ -276,7 +284,7 @@ button * {
 
 .item-text {
     margin: 0.5em;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .item-text h1 {
@@ -290,6 +298,7 @@ button * {
 .item-text p {
     margin-left: 0.5em;
     margin-bottom: 1em;
+    line-height: 1.2em;
 }
 
 .item-icons {
@@ -300,9 +309,16 @@ button * {
     transform: scale(0.8);
 }
 
+.item-icons * {
+    color: #3f3f46;
+}
+
+.item-icons *:hover {
+    color: black;
+}
+
 .right-content {
     grid-column: 2 / 3;
-    grid-row: 1 / 3;
   }
 
 .announcements-content {
@@ -333,13 +349,17 @@ button * {
     padding-top: 0.5em;
 }
 
+.third-p {
+    padding-top: 0.5em;
+}
+
 .trending-content {
     max-width: 15vw;
     display: flex;
     flex-direction: column;
     border-radius: 5%;
     background-color: white;
-    padding: 1em;
+    padding: 1.5em;
     margin: 1em;
     box-shadow: 5px 5px 0px #eab308,
                 -5px -5px 0px #ededed;
@@ -358,17 +378,9 @@ button * {
 }
 
 .user-info {
-    padding: 0.6em;
+    padding: 0.5em;
 }
 
 .user-info h2 {
     font-weight: bolder;
 }
-
-/* Media queries */
-
-@media screen and (max-width: 767px) {
-    .search, .right-content, .notifications {
-      display: none;
-    }
-  }
